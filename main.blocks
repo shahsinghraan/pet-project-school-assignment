@@ -1,0 +1,181 @@
+<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable id="h;LY-oA-eeQGx=X3Cz]p">energy</variable><variable id="]AF6sfj;NvlsEZJd^OSH">happiness</variable></variables><block type="pxt-on-start" id="d5dIBSb%[`[9SQT{+|oL" x="0" y="0"><comment pinned="false" h="80" w="160">On start, I have set the stats to 50. The reason I did that is because the stat decay wouldn't take too long to kill the pet, punishing people who aren't doing anything to their pets in a quick way. + 50 is a smaller number, it is easier to view when your looking at the stats on the microbit (A+B).</comment><data>{"commentRefs":[],"fieldData":{"~commentOffsetX":"16","~commentOffsetY":"16"}}</data><statement name="HANDLER"><block type="device_pause" id="M$-_PSd}z]FyKK#_xaUP"><value name="pause"><shadow type="timePicker" id="so0PFZ`@;nNH@T+Kzm+("><field name="ms">100</field></shadow></value><next><block type="variables_set" id=",@wa;X+u@pVd{dZeG8B;"><field name="VAR" id="h;LY-oA-eeQGx=X3Cz]p">energy</field><value name="VALUE"><shadow type="math_number" id=")}0HqE^R:A71HC}AwHh|"><field name="NUM">50</field></shadow></value><next><block type="variables_set" id="[im,I{{?UVG:%s/+c8-x"><field name="VAR" id="]AF6sfj;NvlsEZJd^OSH">happiness</field><value name="VALUE"><shadow type="math_number" id="TOQXfaw=NoP^lt#wC7T)"><field name="NUM">50</field></shadow></value><next><block type="function_call" id="MMh2zN$Eqj)OKBxx1%DO"><mutation name="_default" functionid="sC19rv_SnG#)z0:+/XX`"></mutation></block></next></block></next></block></next></block></statement></block><block type="device_forever" id="_Hfbun)ZbF7e/;4*TN]g" x="1215" y="-61"><comment pinned="false" h="80" w="160">Randomly does a pooping animation from 0-10 minutes, decreases happiness.</comment><data>{"commentRefs":[],"fieldData":{"~commentOffsetX":"16","~commentOffsetY":"16"}}</data><statement name="HANDLER"><block type="device_pause" id="]|pa0BUU$2_KEz/nuG9f"><value name="pause"><shadow type="timePicker" id="~uT!8IrA5D6~:v?d~V6y"><field name="ms">500</field></shadow><block type="device_random" id="k)vUGWGI$T[kX$t3@m-{"><value name="min"><shadow type="math_number" id="l`Ukt_i%Vq=x|ip]zL4D"><field name="NUM">0</field></shadow></value><value name="limit"><shadow type="math_number" id=")`F/JiQeeWPc-*{9enqO"><field name="NUM">600000</field></shadow></value></block></value><next><block type="device_show_leds" id="Kn[orm.ZNa47L`mw.7HV"><field name="LEDS">`
+        . . . . . 
+        . . . . . 
+        . . . # . 
+        # # # # . 
+        . # . # .
+        `</field><next><block type="device_show_leds" id="|XZgpz+$slxVDV$We{ww"><field name="LEDS">`
+        . . . . . 
+        . . . . . 
+        . . . # . 
+        . # # # . 
+        # # . # .
+        `</field><next><block type="device_show_leds" id="!(sshyO$X50.olB=vIPQ"><field name="LEDS">`
+        . . . . . 
+        . . . . . 
+        . . . # . 
+        . # # # . 
+        # # . # .
+        `</field><next><block type="device_show_leds" id="pl5c_P{Z{Hjs:rM+?A^y"><field name="LEDS">`
+        . . . . . 
+        . . . . . 
+        . . . # . 
+        . # # # . 
+        . # . # .
+        `</field><next><block type="music_playable_play" id="MD`L#{YFn*lwpClcMp+e"><field name="playbackMode">music.PlaybackMode.UntilDone</field><value name="toPlay"><shadow type="music_string_playable" id=";tyh-A!Af5mES[QDnh85"></shadow><block type="soundExpression_builtinPlayableSoundEffect" id="+J@@$iwz)}{tZJ7YLi5V"><field name="soundExpression">soundExpression.sad</field></block></value><next><block type="variables_change" id="aPg4w`mZ3V8@J{[Q.;e)"><field name="VAR" id="]AF6sfj;NvlsEZJd^OSH">happiness</field><value name="VALUE"><shadow type="math_number" id="WH?H{Ez|k$mGqMfB5%-#"><field name="NUM">-10</field></shadow></value><next><block type="device_pause" id="Cp)96O5s-82`?dEMAz:y"><value name="pause"><shadow type="timePicker" id="/y{1$Zt/:FqP[OHg[d)Z"><field name="ms">1000</field></shadow></value></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></statement></block><block type="device_button_event" id="|Ka+=lKe=D4h*1?ngKc}" x="318" y="0"><field name="NAME">Button.B</field><statement name="HANDLER"><block type="function_call" id=",=G`vjg%:i?3V]+GHN@i"><mutation name="Feed" functionid="X`n/X9noO-i0alN.n{+c"></mutation></block></statement></block><block type="device_button_event" id="mgvpn?J6,`EbK|rP{G/O" x="594" y="0"><field name="NAME">Button.A</field><statement name="HANDLER"><block type="function_call" id="je(Uc)3~{UDi#C=;~-L;"><mutation name="play" functionid="mI5kenu9gd#!lFR-6GI("></mutation></block></statement></block><block type="device_button_event" id="Z5j=#vRJ=Vbg2V5dJjGW" x="870" y="0"><field name="NAME">Button.AB</field><comment pinned="false" h="80" w="160">Shows the stats of the pet. Energy comes first then happiness. Originally this was to debug if the stat decay was working however even after it worked, I kept it because it was a useful tool for users to view as it allows them to know what stat to increase in order for the pet to live. A+B also works as a reset button when the pet dies for some reason.</comment><data>{"commentRefs":[],"fieldData":{"~commentOffsetX":"16","~commentOffsetY":"16"}}</data><statement name="HANDLER"><block type="device_clear_display" id="[@ZLfkfk)gp+?{i|5zI+"><next><block type="device_print_message" id="S6K9Oc-vx^,3Sww[jOOd"><value name="text"><shadow type="text" id="5zF}.VFXOn$juL1uESGQ"><field name="TEXT">ENERGY</field></shadow></value><next><block type="device_print_message" id="VO]rVsMp[f8MW:R@5Avv"><value name="text"><shadow type="text" id="vb7?57Om0#[0I+!(_Ix`"><field name="TEXT"></field></shadow><block type="variables_get" id="eh660Zl`g9OOS;-YfD5$"><field name="VAR" id="h;LY-oA-eeQGx=X3Cz]p">energy</field></block></value><next><block type="device_print_message" id=".OAMMR-*M[xn_6,~{U@5"><value name="text"><shadow type="text" id="j:u5n^1PC(+Mh%.EAYr7"><field name="TEXT">HAPPINESS</field></shadow></value><next><block type="device_print_message" id="C*mQj$83PfhQm,/4%r9b"><value name="text"><shadow type="text" id="Vo`4.WF284-F+|9=-,#*"><field name="TEXT"></field></shadow><block type="variables_get" id="#q*S3Rq[X2.K3y8|)Meh"><field name="VAR" id="]AF6sfj;NvlsEZJd^OSH">happiness</field></block></value></block></next></block></next></block></next></block></next></block></statement></block><block type="device_forever" id=":E(#d2t/NJcTp$?rj%dx" x="1657" y="0"><comment pinned="false" h="80" w="160">This block of code states that if any of the stats (energy and happiness) is below or equal to 0, the pet will die and its game over. In the else statement it states if the pet isn't dead, then it should lose -1 energy and happiness every 3 seconds, this is called a stat decay; we have this feature to punish people who do not take care of their pets.</comment><data>{"commentRefs":[],"fieldData":{"~commentOffsetX":"16","~commentOffsetY":"16"}}</data><statement name="HANDLER"><block type="controls_if" id="wo?qUeTM?S%SU?Vc6XVE"><mutation else="1"></mutation><value name="IF0"><shadow type="logic_boolean" id="6vD7qcj)cUQlgc{f(iwf"><field name="BOOL">TRUE</field></shadow><block type="logic_operation" id=";^;K{1wfYGZ%5$Q)UUQ="><field name="OP">OR</field><value name="A"><shadow type="logic_boolean" id="0~zPOcd=6!PZ.g{mVF-a"><field name="BOOL">TRUE</field></shadow><block type="logic_compare" id="q5MD6Q~[Lm1%bOOG{XQ@"><field name="OP">LTE</field><value name="A"><shadow type="math_number" id=":o:j,rhpT,S.JZATie%]"><field name="NUM">0</field></shadow><block type="variables_get" id="hziZRljT-riev4_?Bnz,"><field name="VAR" id="h;LY-oA-eeQGx=X3Cz]p">energy</field></block></value><value name="B"><shadow type="math_number" id="$fhM1k_Ui[X)7B|F]fX."><field name="NUM">0</field></shadow></value></block></value><value name="B"><shadow type="logic_boolean" id="M?yQp}2-J*P)jQ!#5yfQ"><field name="BOOL">TRUE</field></shadow><block type="logic_compare" id="?39/@yL28=?Km!Iblcn-"><field name="OP">LTE</field><value name="A"><shadow type="math_number" id="EcfCuTFyM634^zjRNhn*"><field name="NUM">0</field></shadow><block type="variables_get" id="1eGe$CRS2MxyC6UdhV[E"><field name="VAR" id="]AF6sfj;NvlsEZJd^OSH">happiness</field></block></value><value name="B"><shadow type="math_number" id="bF`VVh%kOXJ~s3X3%OzL"><field name="NUM">0</field></shadow></value></block></value></block></value><statement name="DO0"><block type="device_clear_display" id="#sV.5k.8{.iLjU]d)+-Q"><next><block type="game_game_over" id=")c;*3-M%),%?GsT@F$7?"></block></next></block></statement><statement name="ELSE"><block type="device_pause" id="r@SOpW:NxeV!_*#`qq]4"><value name="pause"><shadow type="timePicker" id="lwtIKfsr#^,2%o^%as6K"><field name="ms">3000</field></shadow></value><next><block type="variables_change" id="$/D(DtHaKd)=(j/PBcB5"><field name="VAR" id="h;LY-oA-eeQGx=X3Cz]p">energy</field><value name="VALUE"><shadow type="math_number" id="ix-Rx.7BK}HD^[4E=GdE"><field name="NUM">-1</field></shadow></value><next><block type="variables_change" id="IU~ps5/cCnzoyE$!LUBj"><field name="VAR" id="]AF6sfj;NvlsEZJd^OSH">happiness</field><value name="VALUE"><shadow type="math_number" id="8Q8G7:o|Gcs:h0zHO|gc"><field name="NUM">-1</field></shadow></value></block></next></block></next></block></statement></block></statement></block><block type="device_forever" id="fMyJZ:8f+t@Z?uDPBtKX" x="2439" y="0"><comment pinned="true" h="80" w="160">This is how the pet sleeps. When you press pin 0 the pet will sleep for 10 seconds, get reenergized and wake up. Originally the pet was going to sleep using the light sensor however, due to weird light readings in my house (thought the light level was 0), I had to make it a button instead.</comment><data>{"commentRefs":[],"fieldData":{"~commentOffsetX":"16","~commentOffsetY":"16"}}</data><statement name="HANDLER"><block type="controls_if" id="#S?afdIN9j^t9spnoka#"><value name="IF0"><shadow type="logic_boolean" id="y[[Fu@O7JzGgWFekT{VR"><field name="BOOL">TRUE</field></shadow><block type="device_pin_is_pressed" id="w(0#KIf:syBz:DN{:jTS"><field name="NAME">TouchPin.P0</field></block></value><statement name="DO0"><block type="device_show_leds" id="/q_;{KI5KJ$w1@46NtpD"><field name="LEDS">`
+        . . . . . 
+        . . . . . 
+        . . . . . 
+        . # . # . 
+        . # # # #
+        `</field><next><block type="variables_change" id="u^V2m$M]Ra;jEZ9TvRcQ"><field name="VAR" id="h;LY-oA-eeQGx=X3Cz]p">energy</field><value name="VALUE"><shadow type="math_number" id="d906H}RilSKW;mNM?XMY"><field name="NUM">10</field></shadow></value></block></next></block></statement></block></statement></block><block type="device_forever" id="o3z9WnZ,_5b:ys0_~:=5" x="2838" y="3"><comment pinned="false" h="80" w="160">This block of code is a stat cap. Basically if it detects that energy or happiness is greater than 50, it sets it 50. The game has a stat cap feature in order for balancing (preventing the user to get like 1000 hunger and happiness, then do nothing).</comment><data>{"commentRefs":[],"fieldData":{"~commentOffsetX":"16","~commentOffsetY":"16"}}</data><statement name="HANDLER"><block type="controls_if" id="|lXd,,uqc6W{^Co6b{;v"><value name="IF0"><shadow type="logic_boolean" id="QD]n@5gF5vQ+9OW(d9oM"><field name="BOOL">TRUE</field></shadow><block type="logic_compare" id="81gp4HqC#w@cYmiVS[=)"><field name="OP">GT</field><value name="A"><shadow type="math_number" id="OBP8]+YrLO2JoodpTe)V"><field name="NUM">0</field></shadow><block type="variables_get" id="e?kws,H1Ej+L}zNuUi^l"><field name="VAR" id="h;LY-oA-eeQGx=X3Cz]p">energy</field></block></value><value name="B"><shadow type="math_number" id="cla/:::a8_{%hri`ewZE"><field name="NUM">50</field></shadow></value></block></value><statement name="DO0"><block type="variables_set" id="?96MHCv4p@?YP3]g3{l)"><field name="VAR" id="h;LY-oA-eeQGx=X3Cz]p">energy</field><value name="VALUE"><shadow type="math_number" id="/RKBC?F9fxHp~ct6c[g3"><field name="NUM">50</field></shadow></value></block></statement><next><block type="controls_if" id="Mt.WwCMV0eKE*r@{/)fP"><value name="IF0"><shadow type="logic_boolean" id="KnRd6X#vEw^e9mmbS}~{"><field name="BOOL">TRUE</field></shadow><block type="logic_compare" id="Tbsra^u^j[e8NFN.)Xgz"><field name="OP">GT</field><value name="A"><shadow type="math_number" id="gg]hFF)B=tqux5)OEbV{"><field name="NUM">0</field></shadow><block type="variables_get" id=":[@h`Rl(zu.L#sS}i.1T"><field name="VAR" id="]AF6sfj;NvlsEZJd^OSH">happiness</field></block></value><value name="B"><shadow type="math_number" id="/0TW0:M08:[s^$g5cB-p"><field name="NUM">50</field></shadow></value></block></value><statement name="DO0"><block type="variables_set" id="YY)Q9ykfBUl`5`sK?P]3"><field name="VAR" id="]AF6sfj;NvlsEZJd^OSH">happiness</field><value name="VALUE"><shadow type="math_number" id="nyGI0T-kJ0Z7$o%5x+B2"><field name="NUM">50</field></shadow></value></block></statement></block></next></block></statement></block><block type="device_gesture_event" id="A*12XcSQC(w/scm9jMJ^" x="0" y="1223"><field name="NAME">Gesture.ScreenUp</field><statement name="HANDLER"><block type="function_call" id="CTNST%{s}5D;60|@4(M3"><mutation name="_default" functionid="sC19rv_SnG#)z0:+/XX`"></mutation></block></statement></block><block type="device_gesture_event" id="57!p:N469`l(zL/vV27-" x="211" y="1223"><field name="NAME">Gesture.TiltLeft</field><statement name="HANDLER"><block type="device_show_leds" id="NLEf3*?%|/lIf-FS;i|?"><field name="LEDS">`
+        . . . . . 
+        # # . . . 
+        . # . . . 
+        # # # . . 
+        . . . . .
+        `</field></block></statement></block><block type="device_gesture_event" id="/6jeROZ.$]isC^}2E)@E" x="455" y="1223"><field name="NAME">Gesture.TiltRight</field><statement name="HANDLER"><block type="device_show_leds" id=",%*X5=v9nO`J6LSgb6*v"><field name="LEDS">`
+        . . . . . 
+        . . . # # 
+        . . . # . 
+        . . # # # 
+        . . . . .
+        `</field></block></statement></block><block type="device_gesture_event" id="wVbX|JA|R:txe9tmdBjq" x="699" y="1223"><field name="NAME">Gesture.FreeFall</field><statement name="HANDLER"><block type="device_show_leds" id="1.De/`?8x_:by.H8D}Ul"><field name="LEDS">`
+        . . . # . 
+        . # # # . 
+        . # . # . 
+        . . . . . 
+        . . . . .
+        `</field><next><block type="device_show_leds" id="!rks$w2G8V%yWt8UFa|H"><field name="LEDS">`
+        . . . . . 
+        . . . # . 
+        . # # # . 
+        . # . # . 
+        . . . . .
+        `</field><next><block type="device_show_leds" id="2iNe9S;Mw3/rt+q.S]NJ"><field name="LEDS">`
+        . . . . . 
+        . . . . . 
+        . . . . . 
+        . . . # . 
+        # # # # #
+        `</field><next><block type="device_show_leds" id="rI-z6jQ_K#uNyO_yXT1j"><field name="LEDS">`
+        . . . . . 
+        . . . . . 
+        . . . # . 
+        . # # # . 
+        . # . # .
+        `</field><next><block type="variables_change" id=",ZdQf$kCN(xL;pI~|.~9"><field name="VAR" id="]AF6sfj;NvlsEZJd^OSH">happiness</field><value name="VALUE"><shadow type="math_number" id="HF`?jo-7(Z^e.@.{nDA$"><field name="NUM">5</field></shadow></value><next><block type="variables_change" id="N]Nk+#BMWDw,_XdkTQUm"><field name="VAR" id="h;LY-oA-eeQGx=X3Cz]p">energy</field><value name="VALUE"><shadow type="math_number" id="kG0^,PQhSD8xGp`f:5Cy"><field name="NUM">-5</field></shadow></value></block></next></block></next></block></next></block></next></block></next></block></statement></block><block type="input_logo_event" id="4Pq27K?:4McXA$GZitj?" x="1026" y="1229"><field name="action">TouchButtonEvent.Pressed</field><comment pinned="true" h="80" w="160">Petting animation. Looks bad because of the microbit's limited LEDs. Increases happiness.</comment><data>{"commentRefs":[],"fieldData":{"~commentOffsetX":"16","~commentOffsetY":"16"}}</data><statement name="HANDLER"><block type="device_show_leds" id=";=8/]1T?pk^Ma[B[l=4-"><field name="LEDS">`
+        . # . . . 
+        . # . . . 
+        . . . # . 
+        . # # # . 
+        . # . # .
+        `</field><next><block type="device_show_leds" id="-4tPGX2B}rsm+=D/2y}]"><field name="LEDS">`
+        . . . . . 
+        . # . . . 
+        . # . # . 
+        . # # # . 
+        . # . # .
+        `</field><next><block type="device_show_leds" id="8.zNyN!ub#lTLKBhILav"><field name="LEDS">`
+        . # . . . 
+        . # . . . 
+        . . . # . 
+        . # # # . 
+        . # . # .
+        `</field><next><block type="device_show_leds" id="FVi4-p#d]Aw_Vv32q~$o"><field name="LEDS">`
+        . . . . . 
+        . # . . . 
+        . # . # . 
+        . # # # . 
+        . # . # .
+        `</field><next><block type="device_show_leds" id="t2jviMtEV`q07V:=g6q,"><field name="LEDS">`
+        . # . . . 
+        . # . . . 
+        . . . # . 
+        . # # # . 
+        . # . # .
+        `</field><next><block type="device_show_leds" id="jwaR}?]|~j29)X(zR{5)"><field name="LEDS">`
+        . . . . . 
+        . . . . . 
+        . . . # . 
+        . # # # . 
+        . # . # .
+        `</field><next><block type="variables_change" id="33M`H%O[_t0o;6Mvmx,F"><field name="VAR" id="]AF6sfj;NvlsEZJd^OSH">happiness</field><value name="VALUE"><shadow type="math_number" id="6W{|w3u#1G)z/U5S_dC$"><field name="NUM">5</field></shadow></value></block></next></block></next></block></next></block></next></block></next></block></next></block></statement></block><block type="function_definition" id="`+2OIvb,s~1kuigF%9Z2" x="1732" y="1223"><mutation name="play" functionid="mI5kenu9gd#!lFR-6GI("></mutation><field name="function_name">play</field><statement name="STACK"><block type="device_show_leds" id="XQKO-mC1.JA%M=f+x[Vj"><field name="LEDS">`
+        . . . . . 
+        . . . . . 
+        . . . # . 
+        . # # # . 
+        . # . # .
+        `</field><next><block type="device_show_leds" id="O=XR|ra5_o_b=|H$cO,W"><field name="LEDS">`
+        . . . . . 
+        . . . # . 
+        . # # # . 
+        . # . # . 
+        . . . . .
+        `</field><next><block type="device_show_leds" id=":AFOR.9]((iB8Es{m]@`"><field name="LEDS">`
+        . . . . . 
+        . . . . . 
+        . . . # . 
+        . # # # . 
+        . # . # .
+        `</field><next><block type="device_show_leds" id="_Z$_q*rBit6?0kWc%Oq%"><field name="LEDS">`
+        . . . . . 
+        . . . # . 
+        . # # # . 
+        . # . # . 
+        . . . . .
+        `</field><next><block type="device_show_leds" id=":+P0I3db08Uh._f4?iv_"><field name="LEDS">`
+        . . . . . 
+        . . . . . 
+        . . . # . 
+        . # # # . 
+        . # . # .
+        `</field><next><block type="device_show_leds" id=":=K=eEs!k[s%zK+@Ci79"><field name="LEDS">`
+        . . . . . 
+        . . . # . 
+        . # # # . 
+        . # . # . 
+        . . . . .
+        `</field><next><block type="device_show_leds" id="QQY_$0E[{Z;h}K*5iQtI"><field name="LEDS">`
+        . . . . . 
+        . . . . . 
+        . . . # . 
+        . # # # . 
+        . # . # .
+        `</field><next><block type="variables_change" id="hy^(q0pg*:)~$g9{!uz|"><field name="VAR" id="h;LY-oA-eeQGx=X3Cz]p">energy</field><value name="VALUE"><shadow type="math_number" id="fhL3LO0y:qr{(FWMqU3U"><field name="NUM">-10</field></shadow></value><next><block type="variables_change" id="0:KQV9xD%/2O{|YYBj$e"><field name="VAR" id="]AF6sfj;NvlsEZJd^OSH">happiness</field><value name="VALUE"><shadow type="math_number" id="t:eMH?M-I;Vc=vLu@V%;"><field name="NUM">10</field></shadow></value></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></statement></block><block type="function_definition" id="d.qJz#(lF0zp:v.59U^Q" x="2076" y="1223"><mutation name="_default" functionid="sC19rv_SnG#)z0:+/XX`"></mutation><field name="function_name">_default</field><statement name="STACK"><block type="device_show_leds" id="3R]4,8eg:`,3G;I**a!~"><field name="LEDS">`
+        . . . . . 
+        . . . . . 
+        . . . # . 
+        . # # # . 
+        . # . # .
+        `</field></block></statement></block><block type="function_definition" id="-W-)|?~%ET?e|,R9).%^" x="2346" y="1223"><mutation name="Feed" functionid="X`n/X9noO-i0alN.n{+c"></mutation><field name="function_name">Feed</field><statement name="STACK"><block type="device_show_leds" id="eYQT$N[T5C}5/8=MP:sw"><field name="LEDS">`
+        . . . . . 
+        . . . . # 
+        . . . # . 
+        . # # # . 
+        . # . # .
+        `</field><next><block type="device_show_leds" id="aGEd-be93nC}v[wJ`.UA"><field name="LEDS">`
+        . . . . . 
+        . . . . . 
+        . . . # # 
+        . # # # . 
+        . # . # .
+        `</field><next><block type="device_show_leds" id="]kbk~ecuf2@x)~Cx7z+F"><field name="LEDS">`
+        . . . . . 
+        . . . . . 
+        . . . # . 
+        . # # # # 
+        . # . # .
+        `</field><next><block type="device_show_leds" id="fgVnLo^3sty[F1uI.m@l"><field name="LEDS">`
+        . . . . . 
+        . . . . . 
+        . . . # . 
+        . # # # . 
+        . # . # #
+        `</field><next><block type="device_pause" id="JKwlD1kG72)L{/WQo)4_"><value name="pause"><shadow type="timePicker" id="[GPn,+XkBjGvQs5}.FP7"><field name="ms">2000</field></shadow></value><next><block type="device_show_leds" id="AJTJ3oW!?L_ahH.bN%gT"><field name="LEDS">`
+        . . . . . 
+        . . . . . 
+        . . . # . 
+        . # # # . 
+        . # . # .
+        `</field><next><block type="music_playable_play" id="Ve7d[TnG+Tff_H:k#Xb4"><field name="playbackMode">music.PlaybackMode.UntilDone</field><value name="toPlay"><shadow type="music_string_playable" id="eTLkQ~2-wQ)5fFU7w*Eu"></shadow><block type="soundExpression_builtinPlayableSoundEffect" id="_0uw8BUEJD|_7!|4f4kM"><field name="soundExpression">soundExpression.happy</field></block></value><next><block type="variables_change" id="IFVeep?+J(@b}R~eitgH"><field name="VAR" id="h;LY-oA-eeQGx=X3Cz]p">energy</field><value name="VALUE"><shadow type="math_number" id="pZ`4rGvhcE6FK1Jb`.(~"><field name="NUM">10</field></shadow></value><next><block type="variables_change" id="`hcW%~BTJbVkqWYg~D8|"><field name="VAR" id="]AF6sfj;NvlsEZJd^OSH">happiness</field><value name="VALUE"><shadow type="math_number" id="OFb#9~TUKh{/x2~~E=~G"><field name="NUM">5</field></shadow></value></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></statement></block><block type="input_on_sound" id="$:[+~FSRbSSo7LTbqOrk" x="358" y="1560"><field name="sound">DetectedSound.Loud</field><comment pinned="false" h="80" w="160">When there is any loud sounds, the pet whimpers and happiness decreases.</comment><data>{"commentRefs":[],"fieldData":{"~commentOffsetX":"16","~commentOffsetY":"16"}}</data><statement name="HANDLER"><block type="music_playable_play" id="kcYy1|3ovRCw:c17/S!a"><field name="playbackMode">music.PlaybackMode.UntilDone</field><value name="toPlay"><shadow type="music_string_playable" id="N7LJXR+E7~WZ{5U*TfLC"></shadow><block type="soundExpression_builtinPlayableSoundEffect" id="2J-#0ZHV}.e0O}tP3Xe$"><field name="soundExpression">soundExpression.sad</field></block></value><next><block type="variables_change" id="1C`)]G[M(]DJwYG^2HAa"><field name="VAR" id="]AF6sfj;NvlsEZJd^OSH">happiness</field><value name="VALUE"><shadow type="math_number" id="`MrmvQ-i*|Mlzj18flE+"><field name="NUM">-5</field></shadow></value></block></next></block></statement></block></xml>
